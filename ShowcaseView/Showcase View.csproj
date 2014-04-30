@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{438D085E-24B0-4865-854E-B4BAE43A1702}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SharpShowcaseView</RootNamespace>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AssemblyName>ShowcaseView</AssemblyName>
+    <TargetFrameworkVersion>v4.3</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__ANDROID__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__ANDROID__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <DocumentationFile>bin\Release\ShowcaseView.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\ReferencedAssemblies\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android.Export" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ShowcaseViews.cs" />
+    <Compile Include="ShowcaseView.cs" />
+    <Compile Include="ShowcaseViewBuilder.cs" />
+    <Compile Include="targets\ITarget.cs" />
+    <Compile Include="IOnShowcaseEventListener.cs" />
+    <Compile Include="targets\ViewTarget.cs" />
+    <Compile Include="targets\PointTarget.cs" />
+    <Compile Include="targets\ActionViewTarget.cs" />
+    <Compile Include="targets\ActionItemTarget.cs" />
+    <Compile Include="utils\Calculator.cs" />
+    <Compile Include="utils\PointAnimator.cs" />
+    <Compile Include="drawing\IClingDrawer.cs" />
+    <Compile Include="utils\IShowcaseAreaCalculator.cs" />
+    <Compile Include="drawing\ClingDrawer.cs" />
+    <Compile Include="drawing\ITextDrawer.cs" />
+    <Compile Include="drawing\TextDrawer.cs" />
+    <Compile Include="anim\AnimationUtils.cs" />
+    <Compile Include="actionbar\ActionbarViewWrapper.cs" />
+    <Compile Include="actionbar\reflection\BaseReflector.cs" />
+    <Compile Include="actionbar\reflection\SherlockReflector.cs" />
+    <Compile Include="actionbar\reflection\ActionbarReflector.cs" />
+    <Compile Include="actionbar\reflection\AppCompatReflector.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values\ids.xml" />
+    <AndroidResource Include="Resources\values\attr.xml" />
+    <AndroidResource Include="Resources\layout\showcase_button.axml" />
+    <AndroidResource Include="Resources\layout\handy.axml" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_cling_normal.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_cling_pressed.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\cling_bleached.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\cling.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\hand.png" />
+    <AndroidResource Include="Resources\drawable\cling_button_bg.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\layout\" />
+    <Folder Include="Resources\drawable-xhdpi\" />
+    <Folder Include="targets\" />
+    <Folder Include="utils\" />
+    <Folder Include="drawing\" />
+    <Folder Include="anim\" />
+    <Folder Include="actionbar\" />
+    <Folder Include="actionbar\reflection\" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <TextStylePolicy inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/x-csharp" />
+          <CSharpFormattingPolicy IndentSwitchBody="True" AnonymousMethodBraceStyle="NextLine" PropertyBraceStyle="NextLine" PropertyGetBraceStyle="NextLine" PropertySetBraceStyle="NextLine" EventBraceStyle="NextLine" EventAddBraceStyle="NextLine" EventRemoveBraceStyle="NextLine" StatementBraceStyle="NextLine" ElseNewLinePlacement="NewLine" CatchNewLinePlacement="NewLine" FinallyNewLinePlacement="NewLine" WhileNewLinePlacement="DoNotCare" ArrayInitializerWrapping="DoNotChange" ArrayInitializerBraceStyle="NextLine" BeforeMethodDeclarationParentheses="False" BeforeMethodCallParentheses="False" BeforeConstructorDeclarationParentheses="False" BeforeDelegateDeclarationParentheses="False" NewParentheses="False" SpacesBeforeBrackets="False" inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" />
+          <TextStylePolicy inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/plain" />
+          <TextStylePolicy inheritsSet="null" scope="application/xml" />
+          <XmlFormattingPolicy inheritsSet="Mono" inheritsScope="application/xml" scope="application/xml" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>
