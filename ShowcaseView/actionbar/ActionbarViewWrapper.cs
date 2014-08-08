@@ -18,12 +18,10 @@ namespace SharpShowcaseView.Actionbar
 
         public ActionBarViewWrapper(View actionBarView)
         {
-            IViewParent actionbarViewParent = null;
-
             if (!actionBarView.Class.Name.Contains("ActionBarView"))
             {
                 String previousP = actionBarView.Class.Name;
-                actionbarViewParent = actionBarView.Parent;
+                actionBarView = (View)actionBarView.Parent;
                 String throwP = actionBarView.Class.Name;
 
                 if (!actionBarView.Class.Name.Contains("ActionBarView"))
@@ -32,7 +30,7 @@ namespace SharpShowcaseView.Actionbar
                 }
             }
 
-            mActionBarView = actionbarViewParent;
+            mActionBarView = (IViewParent)actionBarView;
             mActionBarViewClass = actionBarView.Class;
             mAbsActionBarViewClass = actionBarView.Class.Superclass;
         }

@@ -18,6 +18,7 @@
     <AssemblyName>Sample</AssemblyName>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
+    <ReleaseVersion>1.1</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,9 +65,9 @@
     <Compile Include="AnimationSampleActivity.cs" />
     <Compile Include="ShowcaseFragment.cs" />
     <Compile Include="FragmentActivity.cs" />
+    <Compile Include="ActionItemsSampleActivity.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
@@ -86,6 +87,7 @@
     <AndroidResource Include="Resources\layout\activity_animation.axml" />
     <AndroidResource Include="Resources\layout\fragment_layout.axml" />
     <AndroidResource Include="Resources\layout\fragment_activity_layout.axml" />
+    <AndroidResource Include="Resources\layout\activity_sample.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

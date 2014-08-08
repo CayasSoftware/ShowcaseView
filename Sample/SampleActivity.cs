@@ -31,19 +31,23 @@ namespace Sample
                 switch (e.Position)
                 {
                     case 0:
-                        StartActivity(typeof(MultipleShowcaseSampleActivity));
+                        StartActivity(typeof(ActionItemsSampleActivity));
                         break;
 
                     case 1:
-                        StartActivity(typeof(ShowcaseFragmentActivity));
+                        StartActivity(typeof(MultipleShowcaseSampleActivity));
                         break;
 
                     case 2:
+                        StartActivity(typeof(ShowcaseFragmentActivity));
+                        break;
+
+                    case 3:
                         StartActivity(typeof(AnimationSampleActivity));
                         break;
 
                 // Not currently used
-                    case 3:
+                    case 4:
                         StartActivity(typeof(MemoryManagementTesting));
                         break;
                 }
@@ -114,11 +118,13 @@ namespace Sample
         {
             static int[] TITLE_RES_IDS = new int[]
             {
+                Resource.String.title_action_items, Resource.String.title_action_bar,
                 Resource.String.title_multiple, Resource.String.title_fragments,
                 Resource.String.title_animations //, Resource.String.title_memory
             };
             static int[] SUMMARY_RES_IDS = new int[]
             {
+                Resource.String.sum_action_items, Resource.String.sum_action_bar,
                 Resource.String.sum_multiple, Resource.String.sum_fragments,
                 Resource.String.sum_animations //, Resource.String.sum_memory
             };
